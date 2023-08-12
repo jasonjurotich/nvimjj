@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   end
   })
 
+  -- TREE SITTER
   use ({
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -34,9 +35,73 @@ return require('packer').startup(function(use)
     end,
   })
 
+  use({
+    "windwp/nvim-ts-autotag",
+    after = "nvim-treesitter",
+  })
+
+  -- TOOLS
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
+  use("wakatime/vim-wakatime")
+  use("Pocco81/auto-save.nvim")
+  use("simrat39/rust-tools.nvim")
+  use("szw/vim-maximizer")
 
+  -- FORMATTING
+  use("windwp/nvim-autopairs")
+  use("tpope/vim-surround")
+  use("numToStr/Comment.nvim")
 
+  use("lukas-reineke/indent-blankline.nvim")
+  use("preservim/vim-pencil")
+  use("p00f/nvim-ts-rainbow")
+  use("lewis6991/gitsigns.nvim")
+
+  -- STATUS, BUFFER, TERMINAL
+  use("nvim-lualine/lualine.nvim")
+  use("moll/vim-bbye")
+  use({
+    "akinsho/bufferline.nvim",
+    tag = "*",
+    requires = "nvim-tree/nvim-web-devicons",
+  })
+  use("akinsho/toggleterm.nvim")
+
+  -- LSP
+  use("kaputi/e-kaput.nvim") -- offers errors when you hover over the err, might not be needed. 
+
+  use("glepnir/lspsaga.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
+
+  use({
+    "neovim/nvim-lspconfig",
+    requires = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "jayp0521/mason-null-ls.nvim",
+      "j-hui/fidget.nvim",
+      "onsails/lspkind.nvim",
+    },
+  })
+
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+      "amarakon/nvim-cmp-lua-latex-symbols",
+      "f3fora/cmp-spell",
+    },
+  })
+
+  if packer_bootstrap then
+		require("packer").sync()
+	end
 
 end)
