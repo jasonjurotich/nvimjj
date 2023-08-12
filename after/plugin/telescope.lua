@@ -16,7 +16,21 @@ vim.keymap.set("n", "<leader>s", function()
 	require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
 end, { desc = "Spelling Suggestions" })
 
-
-
-
+local tel = require("telescope")
+local actions = require("telescope.actions")
+tel.setup({
+	defaults = {
+		mappings = {
+			i = {
+				["<leader>q"] = actions.close, -- move to prev result
+				["<leader>v"] = actions.select_vertical, -- open vertically
+				["<leader>e"] = actions.preview_scrolling_up, -- move to prev result
+				["<leader>d"] = actions.preview_scrolling_down, -- move to prev result
+				["<S-Tab>"] = actions.move_selection_previous, -- move to prev result
+				["<Tab>"] = actions.move_selection_next, -- move to next result
+				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+			},
+		},
+	},
+})
 
