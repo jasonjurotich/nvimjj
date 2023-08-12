@@ -12,12 +12,12 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use ('wbthomason/packer.nvim')
 
-  use {
+  use ({
   'nvim-telescope/telescope.nvim', tag = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  })
 
   use ({"Mofiqul/vscode.nvim", 
   as = "vscode",
@@ -26,15 +26,16 @@ return require('packer').startup(function(use)
   end
   })
 
-  use {
+  use ({
     'nvim-treesitter/nvim-treesitter',
     run = function()
         local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
         ts_update()
     end,
-  }
+  })
 
-
+  use("mbbill/undotree")
+  use("tpope/vim-fugitive")
 
 
 
