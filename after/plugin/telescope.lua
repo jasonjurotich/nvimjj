@@ -1,10 +1,13 @@
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- find files within current working directory, respects .gitignore
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope find_files cwd=~/<cr>") -- find files within root directory
 vim.keymap.set('n', '<leader>fs', builtin.live_grep, {}) -- find string in current working directory as you type
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {}) -- list open buffers in current neovim instance
 vim.keymap.set('n', '<leader>fc', builtin.grep_string, {}) -- find string under cursor in current working directory
 vim.keymap.set('n', '<leader>fh', builtin.diagnostics, {})
+vim.keymap.set('n', '<leader>vr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, {})
 
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- find files within github folder
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {}) -- list all git commits (use <cr> to checkout) ["gc" for git commits]

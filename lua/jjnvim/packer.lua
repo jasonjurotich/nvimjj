@@ -24,6 +24,13 @@ return require("packer").startup(function(use)
   use("Slotos/telescope-lsp-handlers.nvim")
   use("stevearc/dressing.nvim")
 
+  use {
+  "aznhe21/actions-preview.nvim",
+  config = function()
+    vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
+  end,
+}
+
   use({
     "Mofiqul/vscode.nvim",
     as = "vscode",
