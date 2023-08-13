@@ -2,7 +2,6 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-local rust_lsp = lsp.build_options('rust_analyzer', {})
 
 lsp.ensure_installed({
   "tsserver",
@@ -95,7 +94,43 @@ lsp.on_attach(function(client, bufnr)
   end, opts)
 end)
 
+require('lspconfig').lua_ls.setup({
+  on_attach = function(client, bufnr)
+    ih.on_attach(client, bufnr)
+  end,
+  settings = {
+    Lua = {
+      hint = {
+        enable = true,
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+    },
+  },
+})
+
+lsp.skip_server_setup({ 'rust_analyzer' })
+
 lsp.setup()
+
+local opts = {
+  tools = {
+    inlay_hints = {
+      only_current_line = true,
+    },
+  },
+  server = {
+    on_attach = function(_, bufnr)
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+    standalone = true,
+  }
+}
+
+local rust_tools = require('rust-tools')
+rust_tools.setup(opts)
 
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
@@ -183,30 +218,4 @@ cmp.setup({
 
 
 
-})
-
-
-require('rust-tools').setup({
-  tools = {
-    executor = require("rust-tools.executors").termopen,
-    reload_workspace_from_cargo_toml = true,
-
-    inlay_hints = {
-      auto = true,
-      only_current_line = true,
-      show_parameter_hints = true,
-      parameter_hints_prefix = "<- ",
-      other_hints_prefix = "-> ",
-    },
-  },
-
-  server = rust_lsp,
-
-  dap = {
-    adapter = {
-      type = "executable",
-      command = "lldb-vscode",
-      name = "rt_lldb",
-    },
-  }
 })
