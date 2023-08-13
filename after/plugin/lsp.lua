@@ -84,7 +84,6 @@ local source_mapping = {
 	nvim_lua = "[Lua]",
 	cmp_tabnine = "[TN]",
 	spell = "[SP]",
-	["vim-dadbod-completion"] = "[DB]",
 }
 
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -326,4 +325,3 @@ require("rust-tools").setup({
 		},
 	},
 })
-

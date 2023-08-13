@@ -119,6 +119,12 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	use({
+		"tzachar/cmp-tabnine",
+		run = "./install.sh",
+		requires = "hrsh7th/nvim-cmp",
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

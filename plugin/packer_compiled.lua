@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/cmp-spell",
     url = "https://github.com/f3fora/cmp-spell"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/cmp_luasnip",
