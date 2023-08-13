@@ -70,6 +70,23 @@ return require("packer").startup(function(use)
 	})
 	use("akinsho/toggleterm.nvim")
 
+	-- MARKDOWN
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
 	-- LSP
 	use("kaputi/e-kaput.nvim") -- offers errors when you hover over the err, might not be needed.
 
