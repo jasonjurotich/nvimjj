@@ -14,6 +14,5 @@ end
 
 Colorpens()
 
-vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "White" })
-vim.api.nvim_set_hl(0, "MyFloatBorder", { bg = "None", fg = "#464140" })
-vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#837674", fg = "White" })
+vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
+

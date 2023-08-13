@@ -38,5 +38,6 @@ vim.opt.spelllang = { "en_us", "es_mx" }
 vim.cmd([[inoremap ww println!("{:#?}",);<left><left>]])
 vim.cmd([[inoremap wu println!("DEBUG this is {:#?}",);<left><left>]])
 
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
+vim.api.nvim_set_keymap('n', '<Leader>x', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 vim.diagnostic.config({ virtual_text = false })
