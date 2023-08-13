@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>gc', builtin.git_commits, {}) -- list all git commi
 vim.keymap.set('n', '<leader>gfc', builtin.git_bcommits, {}) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 vim.keymap.set('n', '<leader>go', builtin.git_branches, {})-- list git branches (use <cr> to checkout) ["gb" for git branch]
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {}) -- list current changes per file with diff preview ["gs" for git status]
+vim.keymap.set('n', '<leader>ps', builtin.spell_suggest, {})
 
 vim.keymap.set("n", "<leader>s", function()
 	require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
