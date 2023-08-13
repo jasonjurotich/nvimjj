@@ -104,7 +104,7 @@ require('lspconfig').lua_ls.setup({
         enable = true,
       },
       diagnostics = {
-        globals = {'vim'},
+        globals = { 'vim' },
       },
     },
   },
@@ -155,6 +155,7 @@ cmp.setup({
     { name = "path" },     -- file system paths
     { name = "cmp_tabnine" },
     { name = "lua-latex-symbols", option = { cache = true } },
+    -- {name = 'copilot'},
     {
       name = "spell",
       option = {
@@ -169,7 +170,11 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ["<C-y>"] = cmp.mapping.abort(),        -- close completion window
     ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({
+      select = true
+      -- add this line for copilot and put select to false if needed
+      -- behavior = cmp.ConfirmBehavior.Replace,
+    }),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-i>'] = cmp.mapping.scroll_docs(4),
 
