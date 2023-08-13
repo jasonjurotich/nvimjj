@@ -34,8 +34,8 @@ require("nvim-autopairs").setup({
 	end,
 })
 
-require("auto-save").setup({
-	enabled = true,
-	trigger_events = { "InsertLeave" },
-	write_all_buffers = false,
-})
+-- require("auto-save").setup({
+-- 	enabled = true,
+-- 	trigger_events = { "InsertLeave" },
+-- 	write_all_buffers = false,
+-- })

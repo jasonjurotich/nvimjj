@@ -46,9 +46,9 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("wakatime/vim-wakatime")
-	use("Pocco81/auto-save.nvim")
 	use("simrat39/rust-tools.nvim")
 	use("szw/vim-maximizer")
+	-- use("Pocco81/auto-save.nvim")
 
 	-- FORMATTING
 	use("windwp/nvim-autopairs")

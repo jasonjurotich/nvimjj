@@ -175,6 +175,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("lspsaga").setup({
+	border_style = "round",
 	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 	finder = {
 		toggle_or_open = "<CR>",
