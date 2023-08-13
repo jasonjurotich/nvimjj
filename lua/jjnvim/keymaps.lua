@@ -7,7 +7,6 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 local opts = { noremap = true, silent = true }
 
-keymap.set("i", "tt", "<ESC>")
 keymap.set("t", "J", "<C-\\><C-N><C-W><C-W>")
 keymap.set("t", "kj", "<C-\\><C-N>")
 keymap.set("t", "<C-j>", "<Cmd>wincmd j<CR>")

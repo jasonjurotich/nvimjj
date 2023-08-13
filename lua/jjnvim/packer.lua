@@ -11,97 +11,98 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use ('wbthomason/packer.nvim')
+return require("packer").startup(function(use)
+	use("wbthomason/packer.nvim")
 
-  use ({
-  'nvim-telescope/telescope.nvim', tag = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-  })
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.x",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-  use ({"Mofiqul/vscode.nvim", 
-  as = "vscode",
-  config = function() 
-    vim.cmd('colorscheme vscode')
-  end
-  })
+	use({
+		"Mofiqul/vscode.nvim",
+		as = "vscode",
+		config = function()
+			vim.cmd("colorscheme vscode")
+		end,
+	})
 
-  -- TREE SITTER
-  use ({
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-        ts_update()
-    end,
-  })
+	-- TREE SITTER
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
 
-  use({
-    "windwp/nvim-ts-autotag",
-    after = "nvim-treesitter",
-  })
+	use({
+		"windwp/nvim-ts-autotag",
+		after = "nvim-treesitter",
+	})
 
-  -- TOOLS
-  use("mbbill/undotree")
-  use("tpope/vim-fugitive")
-  use("wakatime/vim-wakatime")
-  use("Pocco81/auto-save.nvim")
-  use("simrat39/rust-tools.nvim")
-  use("szw/vim-maximizer")
+	-- TOOLS
+	use("mbbill/undotree")
+	use("tpope/vim-fugitive")
+	use("wakatime/vim-wakatime")
+	use("Pocco81/auto-save.nvim")
+	use("simrat39/rust-tools.nvim")
+	use("szw/vim-maximizer")
 
-  -- FORMATTING
-  use("windwp/nvim-autopairs")
-  use("tpope/vim-surround")
-  use("numToStr/Comment.nvim")
+	-- FORMATTING
+	use("windwp/nvim-autopairs")
+	use("tpope/vim-surround")
+	use("numToStr/Comment.nvim")
 
-  use("lukas-reineke/indent-blankline.nvim")
-  use("preservim/vim-pencil")
-  use("p00f/nvim-ts-rainbow")
-  use("lewis6991/gitsigns.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("preservim/vim-pencil")
+	use("p00f/nvim-ts-rainbow")
+	use("lewis6991/gitsigns.nvim")
 
-  -- STATUS, BUFFER, TERMINAL
-  use("nvim-lualine/lualine.nvim")
-  use("moll/vim-bbye")
-  use({
-    "akinsho/bufferline.nvim",
-    tag = "*",
-    requires = "nvim-tree/nvim-web-devicons",
-  })
-  use("akinsho/toggleterm.nvim")
+	-- STATUS, BUFFER, TERMINAL
+	use("nvim-lualine/lualine.nvim")
+	use("moll/vim-bbye")
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "*",
+		requires = "nvim-tree/nvim-web-devicons",
+	})
+	use("akinsho/toggleterm.nvim")
 
-  -- LSP
-  use("kaputi/e-kaput.nvim") -- offers errors when you hover over the err, might not be needed. 
+	-- LSP
+	use("kaputi/e-kaput.nvim") -- offers errors when you hover over the err, might not be needed.
 
-  use("glepnir/lspsaga.nvim")
+	use("glepnir/lspsaga.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 
-  use({
-    "neovim/nvim-lspconfig",
-    requires = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "jayp0521/mason-null-ls.nvim",
-      "j-hui/fidget.nvim",
-      "onsails/lspkind.nvim",
-    },
-  })
+	use({
+		"neovim/nvim-lspconfig",
+		requires = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"jayp0521/mason-null-ls.nvim",
+			"j-hui/fidget.nvim",
+			"onsails/lspkind.nvim",
+		},
+	})
 
-  use({
-    "hrsh7th/nvim-cmp",
-    requires = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-      "amarakon/nvim-cmp-lua-latex-symbols",
-      "f3fora/cmp-spell",
-    },
-  })
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			"amarakon/nvim-cmp-lua-latex-symbols",
+			"f3fora/cmp-spell",
+		},
+	})
 
-  if packer_bootstrap then
+	if packer_bootstrap then
 		require("packer").sync()
 	end
-
 end)
