@@ -35,3 +35,8 @@ vim.opt.shortmess:append("c")
 vim.opt.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.spelllang = { "en_us", "es_mx" }
 
+vim.cmd([[inoremap ww println!("{:#?}",);<left><left>]])
+vim.cmd([[inoremap wu println!("DEBUG this is {:#?}",);<left><left>]])
+
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+vim.diagnostic.config({ virtual_text = false })
