@@ -108,6 +108,7 @@ rust_tools.setup(opts)
 
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
+vim.cmd(':set winhighlight=' .. cmp.config.window.bordered().winhighlight)
 
 local luasnip = require('luasnip')
 require("luasnip.loaders.from_vscode").lazy_load()
