@@ -70,6 +70,25 @@ null_ls.setup({
 	end,
 })
 
+vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "White" })
+vim.api.nvim_set_hl(0, "MyFloatBorder", { bg = "None", fg = "#464140" })
+vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#837674", fg = "White" })
+
+local luasnip = require("luasnip")
+local lspkind = require("lspkind")
+
+local source_mapping = {
+	buffer = "[Buffer]",
+	path = "[Path]",
+	nvim_lsp = "[LSP]",
+	nvim_lua = "[Lua]",
+	cmp_tabnine = "[TN]",
+	spell = "[SP]",
+	["vim-dadbod-completion"] = "[DB]",
+}
+
+require("luasnip/loaders/from_vscode").lazy_load()
+
 local cmp = require("cmp")
 
 cmp.setup({
@@ -308,18 +327,3 @@ require("rust-tools").setup({
 	},
 })
 
--- SNIPPITS
-local luasnip = require("luasnip")
-local lspkind = require("lspkind")
-
-local source_mapping = {
-	buffer = "[Buffer]",
-	path = "[Path]",
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[Lua]",
-	cmp_tabnine = "[TN]",
-	spell = "[SP]",
-	["vim-dadbod-completion"] = "[DB]",
-}
-
-require("luasnip/loaders/from_vscode").lazy_load()
