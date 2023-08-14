@@ -7,16 +7,19 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 local opts = { noremap = true, silent = true }
 
+-- window management
+keymap.set("n", "vs", ":vs<CR>") -- split window vertically, can also be <C-w>v
+keymap.set("n", "<leader>sh", "<C-w>s")        -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=")        -- make split windows equal width & height
 keymap.set("t", "J", "<C-\\><C-N><C-W><C-W>")
+keymap.set("n", "L", "<C-W><C-W>")
+keymap.set("n", "H", "<C-W><C-H>")
 
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
-keymap.set("n", "L", "<C-W><C-W>")
-keymap.set("n", "H", "<C-W><C-H>")
 keymap.set("n", "gb", "<C-o>")
 keymap.set("n", "gn", "<C-t>")
 keymap.set("n", "ss", "ZZ")
-keymap.set("n", "vs", ":vs<CR>")
 keymap.set("n", "te", ":ToggleTerm size=80 dir direction=vertical hidden=true <CR>")
 keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
@@ -35,9 +38,6 @@ keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
 keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
--- window management
-keymap.set("n", "<leader>sh", "<C-w>s")        -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=")        -- make split windows equal width & height
 
 keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open new tab
 keymap.set("n", "<leader>tu", ":tabclose<CR>") -- close current tab
@@ -57,3 +57,5 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- goyo
 keymap.set("n", "<leader>gy", ":Goyo 80<CR>")
+
+keymap.set("n", "<leader>nh", ":nohl<CR>")
