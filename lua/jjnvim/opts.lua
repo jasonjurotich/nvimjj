@@ -19,6 +19,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.mouse = "a"
 
+vim.opt.incsearch = true
+vim.opt.scrolloff = 8
+
 vim.opt.cursorline = false
 vim.opt.signcolumn = "yes"
 
@@ -39,5 +42,5 @@ vim.cmd([[inoremap ww println!("{:#?}",);<left><left>]])
 vim.cmd([[inoremap wu println!("DEBUG this is {:#?}",);<left><left>]])
 
 vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
-vim.api.nvim_set_keymap('n', '<Leader>x', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>x', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 vim.diagnostic.config({ virtual_text = false })

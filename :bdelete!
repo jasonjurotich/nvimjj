@@ -77,8 +77,6 @@ lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
 
-local rt = require('rust-tools')
-
 local opts = {
   tools = {
     inlay_hints = {
@@ -94,7 +92,8 @@ local opts = {
   }
 }
 
-rt.setup(opts)
+local rust_tools = require('rust-tools')
+rust_tools.setup(opts)
 
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
