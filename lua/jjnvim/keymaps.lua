@@ -7,6 +7,9 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 local opts = { noremap = true, silent = true }
 
+-- g_ is for going to end of line with last character non whitespace
+-- only _ to go to the beginning of the line that is not whitespace
+
 -- window management
 keymap.set("n", "vs", ":vs<CR>") -- split window vertically, can also be <C-w>v
 keymap.set("n", "<leader>sh", "<C-w>s")        -- split window horizontally
