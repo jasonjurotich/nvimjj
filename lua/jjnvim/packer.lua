@@ -59,7 +59,9 @@ return require("packer").startup(function(use)
   use("wakatime/vim-wakatime")
   use("simrat39/rust-tools.nvim")
   use("szw/vim-maximizer")
-  -- use("Pocco81/auto-save.nvim")
+  use("christoomey/vim-tmux-navigator")
+  use('vim-scripts/ReplaceWithRegister')
+  use("Pocco81/auto-save.nvim")
 
   -- FORMATTING
   use("windwp/nvim-autopairs")
@@ -70,10 +72,13 @@ return require("packer").startup(function(use)
   use("preservim/vim-pencil")
   use("p00f/nvim-ts-rainbow")
   use("lewis6991/gitsigns.nvim")
+  use('folke/todo-comments.nvim')
 
-  -- STATUS, BUFFER, TERMINAL
+  -- STATUS, BUFFER, TERMINAL, EXPLORER
   use("nvim-lualine/lualine.nvim")
   use("moll/vim-bbye")
+
+  use("nvim-tree/nvim-tree.lua")
   use({
     "akinsho/bufferline.nvim",
     tag = "*",

@@ -84,11 +84,21 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ReplaceWithRegister = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/ReplaceWithRegister",
+    url = "https://github.com/vim-scripts/ReplaceWithRegister"
+  },
   ["actions-preview.nvim"] = {
     config = { "\27LJ\2\nr\0\0\a\0\b\0\v6\0\0\0009\0\1\0009\0\2\0005\2\3\0'\3\4\0006\4\5\0'\6\6\0B\4\2\0029\4\a\4B\0\4\1K\0\1\0\17code_actions\20actions-preview\frequire\aga\1\3\0\0\6v\6n\bset\vkeymap\bvim\0" },
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/actions-preview.nvim",
     url = "https://github.com/aznhe21/actions-preview.nvim"
+  },
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -201,6 +211,11 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/nvim-treesitter",
@@ -253,6 +268,11 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/toggleterm.nvim",
@@ -287,6 +307,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   ["vim-wakatime"] = {
     loaded = true,
