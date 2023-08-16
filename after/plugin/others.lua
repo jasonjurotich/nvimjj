@@ -34,6 +34,9 @@ require("nvim-autopairs").setup({
 	end,
 })
 
+
+-- https://raw.githubusercontent.com/kyazdani42/nvim-tree.lua/master/doc/nvim-tree-lua.txt
+-- commands for nvim-tree
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	view = {
