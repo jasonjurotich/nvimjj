@@ -25,11 +25,11 @@ return require("packer").startup(function(use)
   use("stevearc/dressing.nvim")
 
   use {
-  "aznhe21/actions-preview.nvim",
-  config = function()
-    vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
-  end,
-}
+    "aznhe21/actions-preview.nvim",
+    config = function()
+      vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
+    end,
+  }
 
   use({
     "Mofiqul/vscode.nvim",
@@ -72,7 +72,11 @@ return require("packer").startup(function(use)
   use("preservim/vim-pencil")
   use("p00f/nvim-ts-rainbow")
   use("lewis6991/gitsigns.nvim")
-  use('folke/todo-comments.nvim')
+  use({
+    'folke/todo-comments.nvim',
+    requires = { { "nvim-lua/plenary.nvim" } },
+    opts = {}
+  })
 
   -- STATUS, BUFFER, TERMINAL, EXPLORER
   use("nvim-lualine/lualine.nvim")
@@ -151,17 +155,17 @@ return require("packer").startup(function(use)
     branch = "v2.x",
     requires = {
       -- LSP Support
-      { "neovim/nvim-lspconfig" },          -- Required
-      { "williamboman/mason.nvim" },        -- Optional
+      { "neovim/nvim-lspconfig" },             -- Required
+      { "williamboman/mason.nvim" },           -- Optional
       { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
       -- Autocompletion
-      { "hrsh7th/nvim-cmp" },  -- Required
+      { "hrsh7th/nvim-cmp" },     -- Required
       { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "hrsh7th/cmp-buffer" }, -- Optional
-      { "hrsh7th/cmp-path" },  -- Optional
-      { "hrsh7th/cmp-cmdline" }, -- Optional
-      { "L3MON4D3/LuaSnip" },  -- Required
+      { "hrsh7th/cmp-buffer" },   -- Optional
+      { "hrsh7th/cmp-path" },     -- Optional
+      { "hrsh7th/cmp-cmdline" },  -- Optional
+      { "L3MON4D3/LuaSnip" },     -- Required
     },
   })
 
