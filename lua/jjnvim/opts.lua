@@ -1,3 +1,7 @@
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g.rust_recommended_style = 0
 vim.opt.ls = 0
 vim.opt.ch = 0
@@ -46,3 +50,6 @@ vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
 -- vim.api.nvim_set_keymap('n', '<Leader>x', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 vim.diagnostic.config({ virtual_text = false })
 -- vim.g.nvim_tree_width = 25
+vim.opt.termguicolors = true
+vim.cmd[[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]]
+
