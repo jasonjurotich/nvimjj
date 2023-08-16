@@ -16,4 +16,4 @@ Colorpens()
 
 vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
-
+vim.cmd[[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]]
