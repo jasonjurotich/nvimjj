@@ -79,7 +79,8 @@ return require("packer").startup(function(use)
   })
 
   -- STATUS, BUFFER, TERMINAL, EXPLORER
-  use("nvim-lualine/lualine.nvim")
+  -- use("nvim-lualine/lualine.nvim")
+  use ('ojroques/nvim-hardline')
   use('vimpostor/vim-tpipeline') -- puts vim statusline into tmux statusline
 
   use("moll/vim-bbye")
@@ -110,8 +111,6 @@ return require("packer").startup(function(use)
   })
 
   -- LSP
-  use("kaputi/e-kaput.nvim") -- offers errors when you hover over the err, might not be needed.
-
   use("amarakon/nvim-cmp-lua-latex-symbols")
   use("f3fora/cmp-spell")
   use("rafamadriz/friendly-snippets")

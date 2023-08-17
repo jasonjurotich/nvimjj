@@ -53,4 +53,7 @@ vim.diagnostic.config({ virtual_text = false })
 -- vim.g.nvim_tree_width = 25
 vim.opt.termguicolors = true
 vim.cmd[[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]]
+vim.cmd[[hi StatusLine ctermbg=NONE cterm=NONE]]
+
+
 
