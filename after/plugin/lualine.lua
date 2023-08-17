@@ -3,7 +3,6 @@ require('hardline').setup {
   theme = 'catppuccin_minimal',   -- change theme
   sections = {         -- define sections
     {class = 'mode', item = require('hardline.parts.mode').get_item},
-    {class = 'high', item = require('hardline.parts.git').get_item, hide = 100},
     {class = 'med', item = require('hardline.parts.filename').get_item},
     '%<',
     {class = 'med', item = '%='},
