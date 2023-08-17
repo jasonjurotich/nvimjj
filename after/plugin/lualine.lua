@@ -10,6 +10,9 @@ require("lualine").setup({
 		theme = custom_vscode,
 		component_separators = "|",
 		section_separators = "",
+    sections = {
+      lualine_x = {'filetype'},
+    },
 		path = 2,
 	},
 })
