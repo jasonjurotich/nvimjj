@@ -1,6 +1,7 @@
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.tpipeline_autoembed = 0
 
 vim.g.rust_recommended_style = 0
 vim.opt.ls = 0

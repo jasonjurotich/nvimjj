@@ -80,6 +80,8 @@ return require("packer").startup(function(use)
 
   -- STATUS, BUFFER, TERMINAL, EXPLORER
   use("nvim-lualine/lualine.nvim")
+  use('vimpostor/vim-tpipeline')
+
   use("moll/vim-bbye")
 
   use("nvim-tree/nvim-tree.lua")
@@ -123,33 +125,6 @@ return require("packer").startup(function(use)
       })
     end,
   })
-  -- use("glepnir/lspsaga.nvim")
-  -- use("jose-elias-alvarez/null-ls.nvim")
-
-  -- use({
-  -- 	"neovim/nvim-lspconfig",
-  -- 	requires = {
-  -- 		"williamboman/mason.nvim",
-  -- 		"williamboman/mason-lspconfig.nvim",
-  -- 		"jayp0521/mason-null-ls.nvim",
-  -- 		"j-hui/fidget.nvim",
-  -- 		"onsails/lspkind.nvim",
-  -- 	},
-  -- })
-  --
-  -- use({
-  -- 	"hrsh7th/nvim-cmp",
-  -- 	requires = {
-  -- 		"hrsh7th/cmp-nvim-lsp",
-  -- 		"hrsh7th/cmp-buffer",
-  -- 		"hrsh7th/cmp-path",
-  -- 		"hrsh7th/cmp-cmdline",
-  -- 		"L3MON4D3/LuaSnip",
-  -- 		"saadparwaiz1/cmp_luasnip",
-  -- 		"rafamadriz/friendly-snippets",
-  -- 	},
-  -- })
-  --
   use({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
