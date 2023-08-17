@@ -60,5 +60,4 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- goyo
 keymap.set("n", "<leader>gy", ":Goyo 80<CR>")
-
 keymap.set("n", "<leader>nh", ":nohl<CR>")
