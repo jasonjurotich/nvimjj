@@ -18,6 +18,7 @@ keymap.set("t", "J", "<C-\\><C-N><C-W><C-W>")
 keymap.set("n", "L", "<C-W><C-W>")
 keymap.set("n", "H", "<C-W><C-H>")
 
+keymap.set('n', 'tw', ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
 keymap.set("n", "gb", "<C-o>")
