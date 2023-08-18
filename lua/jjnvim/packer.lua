@@ -81,6 +81,8 @@ return require("packer").startup(function(use)
   -- STATUS, BUFFER, TERMINAL, EXPLORER
   -- use("nvim-lualine/lualine.nvim")
   use ('ojroques/nvim-hardline')
+  use ('jasonjurotich/hardline-jjir')
+
   use('vimpostor/vim-tpipeline') -- puts vim statusline into tmux statusline
 
   use("moll/vim-bbye")
