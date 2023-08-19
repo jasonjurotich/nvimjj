@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>fc', builtin.grep_string, {}) -- find string under 
 -- LSP
 vim.keymap.set('n', '<leader>fh', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, {})
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 vim.keymap.set('n', 'ge', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'td', builtin.lsp_type_definitions, {})
