@@ -10,4 +10,3 @@ require('hardline').setup {
     -- {class = 'med', item = require('hardline.parts.filename').get_item},
   },
 }
-
