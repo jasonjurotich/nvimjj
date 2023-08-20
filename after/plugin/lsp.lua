@@ -46,19 +46,16 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "]d", function()
     vim.diagnostic.goto_prev()
   end, opts)
-  -- vim.keymap.set("n", "<leader>vd", function()
-  --   vim.diagnostic.open_float()
-  -- end, opts)
-  -- vim.keymap.set("n", "gD", function()
-  --   vim.lsp.buf.definition()
-  -- end, opts)
-  -- vim.keymap.set("n", "<leader>ga", function()
-  --   vim.lsp.buf.code_action()
-  -- end, opts)
   vim.keymap.set("n", "<leader>rn", function()
     vim.lsp.buf.rename()
   end, opts)
 end)
+
+require('lspconfig').ltex.setup({
+  cmd = { "ltex-ls" },
+  filetypes = { "markdown", "text" },
+  flags = { debounce_text_changes = 300 },
+})
 
 require('lspconfig').lua_ls.setup({
   settings = {
