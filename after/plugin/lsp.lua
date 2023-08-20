@@ -16,6 +16,7 @@ lsp.ensure_installed({
   "marksman",
   "taplo",
   "ltex",
+  "ltex-ls"
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -51,10 +52,12 @@ lsp.on_attach(function(client, bufnr)
   end, opts)
 end)
 
-require('lspconfig')['ltex'].setup({
+require('lspconfig').ltex.setup({
   cmd = { "ltex-ls" },
-  filetypes = { "markdown", "text" },
+  filetypes = { "markdown", "text", "md" },
   flags = { debounce_text_changes = 300 },
+  on_attach = function(client, bufnr)
+  end,
 })
 
 require('lspconfig').lua_ls.setup({
