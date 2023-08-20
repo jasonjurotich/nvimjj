@@ -56,6 +56,11 @@ require('lspconfig').ltex.setup({
   cmd = { "ltex-ls" },
   filetypes = { "markdown", "text", "md" },
   flags = { debounce_text_changes = 300 },
+  settings = {
+    ltex = {
+      language = "en",
+    }
+  },
   on_attach = function(client, bufnr)
   end,
 })
