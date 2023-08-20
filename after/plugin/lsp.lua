@@ -51,7 +51,7 @@ lsp.on_attach(function(client, bufnr)
   end, opts)
 end)
 
-require('lspconfig').ltex.setup({
+require('lspconfig')['ltex'].setup({
   cmd = { "ltex-ls" },
   filetypes = { "markdown", "text" },
   flags = { debounce_text_changes = 300 },
@@ -113,6 +113,7 @@ cmp.setup({
     { name = "buffer" },   -- text within current buffer
     { name = "path" },     -- file system paths
     { name = "cmp_tabnine" },
+    { name = "ltex"},
     { name = "lua-latex-symbols", option = { cache = true } },
     -- {name = 'copilot'},
     {
