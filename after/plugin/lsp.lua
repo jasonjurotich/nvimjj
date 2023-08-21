@@ -57,7 +57,7 @@ require("lspconfig")["cssls"].setup({
 require("lspconfig")["ltex"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	cmd = { "ltex-ls" },
+	cmd = { "ltex-ls" }, -- FIX  needs to have full path to work!!
 	filetypes = { "markdown", "text", "md", "bib", "plaintext", "tex", "gitcommit", "pandoc" },
 	flags = { debounce_text_changes = 300 },
 })
