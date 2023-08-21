@@ -108,6 +108,19 @@ return require("packer").startup(function(use)
   })
 
   -- LSP
+  use ( "neovim/nvim-lspconfig" )
+  use ( "williamboman/mason.nvim" )
+  use ("williamboman/mason-lspconfig.nvim")
+  use ("jayp0521/mason-null-ls.nvim")
+
+  -- Autocompletion
+  use ("hrsh7th/nvim-cmp")
+  use ("hrsh7th/cmp-nvim-lsp")
+  use ("hrsh7th/cmp-buffer")
+  use ("hrsh7th/cmp-path")
+  use ("hrsh7th/cmp-cmdline")
+  use ("L3MON4D3/LuaSnip")
+
   use("amarakon/nvim-cmp-lua-latex-symbols")
   use("f3fora/cmp-spell")
   use("rafamadriz/friendly-snippets")
@@ -124,20 +137,6 @@ return require("packer").startup(function(use)
   use({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
-    requires = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" },             -- Required
-      { "williamboman/mason.nvim" },           -- Optional
-      { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" },     -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "hrsh7th/cmp-buffer" },   -- Optional
-      { "hrsh7th/cmp-path" },     -- Optional
-      { "hrsh7th/cmp-cmdline" },  -- Optional
-      { "L3MON4D3/LuaSnip" },     -- Required
-    },
   })
 
   use({
