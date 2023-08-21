@@ -1,192 +1,129 @@
-local lsp = require("lsp-zero")
-lsp.preset("recommended")
+local on_attach = function(client, bufnr)
+	local opts1 = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts1) -- jump to previous diagnostic in buffer
+	vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts1) -- jump to next diagnostic in buffer
+	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts1) -- show documentation for what is under cursor
+	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts1) -- got to declaration
+	vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts1) -- smart rename
+end
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-lsp.ensure_installed({
-  "tsserver",
-  "html",
-  "cssls",
-  "tailwindcss",
-  "lua_ls",
-  "emmet_ls",
-  "rust_analyzer",
-  "texlab",
-  "jsonls",
-  "marksman",
-  "taplo",
-  "ltex",
-  "ltex-ls"
-})
-
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({ buffer = bufnr })
-end)
-
-lsp.set_preferences({
-  suggest_lsp_servers = false,
-  sign_icons = {
-    error = "E",
-    warn = "W",
-    hint = "H",
-    info = "I",
-  },
-})
-
-lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, remap = false }
-  vim.keymap.set("n", "gd", function()
-    vim.lsp.buf.declaration()
-  end, opts)
-  vim.keymap.set("n", "K", function()
-    vim.lsp.buf.hover()
-  end, opts)
-  vim.keymap.set("n", "[d", function()
-    vim.diagnostic.goto_next()
-  end, opts)
-  vim.keymap.set("n", "]d", function()
-    vim.diagnostic.goto_prev()
-  end, opts)
-  vim.keymap.set("n", "<leader>rn", function()
-    vim.lsp.buf.rename()
-  end, opts)
-end)
-
-require('lspconfig').ltex.setup({
-  cmd = { "ltex-ls" },
-  filetypes = { "markdown", "text", "md" ,"bib", "plaintext", "tex", "gitcommit", "pandoc"},
-  flags = { debounce_text_changes = 300 },
-  settings = {
-    ltex = {
-      language = "en-US",
-    }
-  },
-})
-
-require('lspconfig').lua_ls.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
-      },
-    },
-  },
-})
-
-lsp.skip_server_setup({ 'rust_analyzer' })
-
-lsp.setup()
-
-local rt = require('rust-tools')
-
-local opts = {
-  tools = {
-    inlay_hints = {
-      only_current_line = true,
-    },
-  },
-  server = {
-    on_attach = function(_, bufnr)
-      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
-    standalone = true,
-  }
+local lsp_flags = {
+	debounce_text_changes = 150,
 }
 
-rt.setup(opts)
+-- Change the Diagnostic symbols in the sign column (gutter)
+local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
-local cmp = require("cmp")
-local cmp_action = require("lsp-zero").cmp_action()
-vim.cmd(':set winhighlight=' .. cmp.config.window.bordered().winhighlight)
+-- configure lua
+require("lspconfig")["lua_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+		},
+	},
+})
 
-local luasnip = require('luasnip')
-require("luasnip.loaders.from_vscode").lazy_load()
+-- configure html server
+require("lspconfig")["html"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
 
-vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "White" })
-vim.api.nvim_set_hl(0, "MyFloatBorder", { bg = "None", fg = "#464140" })
-vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#837674", fg = "White" })
+-- configure css server
+require("lspconfig")["cssls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
-cmp.setup({
-  preselect = 'item',
-  completion = {
-    completeopt = 'menu,menuone,noinsert'
-  },
+-- configure ltex server
+require("lspconfig")["ltex"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = { "ltex-ls" },
+	filetypes = { "markdown", "text", "md", "bib", "plaintext", "tex", "gitcommit", "pandoc" },
+	flags = { debounce_text_changes = 300 },
+})
 
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" },  -- snippets
-    { name = "buffer" },   -- text within current buffer
-    { name = "path" },     -- file system paths
-    { name = "cmp_tabnine" },
-    { name = "ltex"},
-    { name = "lua-latex-symbols", option = { cache = true } },
-    -- {name = 'copilot'},
-    {
-      name = "spell",
-      option = {
-        keep_all_entries = true,
-        enable_in_context = function()
-          return true
-        end,
-      },
-    },
-  }),
+-- markdown
+require("lspconfig")["marksman"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+--
+-- configure tailwindcss server
+require("lspconfig")["tailwindcss"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
-  mapping = cmp.mapping.preset.insert({
-    ["<C-y>"] = cmp.mapping.abort(),        -- close completion window
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<CR>"] = cmp.mapping.confirm({
-      select = true
-      -- add this line for copilot and put select to false if needed
-      -- behavior = cmp.ConfirmBehavior.Replace,
-    }),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-i>'] = cmp.mapping.scroll_docs(4),
+-- configure emmet language server
+require("lspconfig")["emmet_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
 
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end),
+require("rust-tools").setup({
+	tools = {
+		executor = require("rust-tools.executors").termopen,
+		reload_workspace_from_cargo_toml = true,
 
+		inlay_hints = {
+			auto = true,
+			only_current_line = true,
+			show_parameter_hints = true,
+			parameter_hints_prefix = "<- ",
+			other_hints_prefix = "-> ",
+		},
+	},
 
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+		standalone = true,
 
-  }),
+		settings = {
+			["rust-analyzer"] = {
+				assist = {
+					importPrefix = "by_self",
+				},
+				cargo = {
+					allFeatures = true,
+				},
+				checkOnSave = {
+					command = "clippy",
+				},
+				lens = {
+					references = true,
+					methodReferences = true,
+				},
+			},
+		},
+	},
 
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-
-  window = {
-    completion = cmp.config.window.bordered({
-      scrollbar = false,
-      border = "rounded",
-      winhighlight = "Normal:MyNormal,FloatBorder:MyFloatBorder,CursorLine:MyCursorLine,Search:None",
-    }),
-    documentation = cmp.config.window.bordered({
-      scrollbar = false,
-      border = "rounded",
-      winhighlight = "Normal:MyNormal,FloatBorder:MyFloatBorder,CursorLine:MyCursorLine,Search:None",
-    }),
-  },
-
-
-
-
+	dap = {
+		adapter = {
+			type = "executable",
+			command = "lldb-vscode",
+			name = "rt_lldb",
+		},
+	},
 })
