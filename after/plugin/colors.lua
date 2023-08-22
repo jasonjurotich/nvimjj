@@ -7,7 +7,7 @@ require("vscode").setup({
 	},
 })
 
-function Colorpens(color) 
+function Colorpens(color)
 	color = color or "vscode"
 	vim.cmd.colorscheme(color)
 end
@@ -19,5 +19,6 @@ vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NonText guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
-vim.cmd[[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]]
-vim.cmd[[hi StatusLine ctermbg=NONE cterm=NONE]]
+vim.cmd([[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
+vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
+vim.cmd([[highlight FloatBorder guifg=darkgrey guibg=NONE]])

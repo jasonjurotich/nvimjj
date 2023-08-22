@@ -1,10 +1,20 @@
 local on_attach = function(client, bufnr)
-	local opts1 = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts1) -- jump to previous diagnostic in buffer
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts1) -- jump to next diagnostic in buffer
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts1) -- show documentation for what is under cursor
-	vim.keymap.set("n", "gd", vim.lsp.buf.declaration, opts1) -- got to declaration
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts1) -- smart rename
+	local opts = { buffer = bufnr, remap = false }
+	vim.keymap.set("n", "gd", function()
+		vim.lsp.buf.declaration()
+	end, opts)
+	vim.keymap.set("n", "K", function()
+		vim.lsp.buf.hover()
+	end, opts)
+	vim.keymap.set("n", "[d", function()
+		vim.diagnostic.goto_next()
+	end, opts)
+	vim.keymap.set("n", "]d", function()
+		vim.diagnostic.goto_prev()
+	end, opts)
+	vim.keymap.set("n", "<leader>rn", function()
+		vim.lsp.buf.rename()
+	end, opts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -126,4 +136,8 @@ require("rust-tools").setup({
 			name = "rt_lldb",
 		},
 	},
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded",
 })
