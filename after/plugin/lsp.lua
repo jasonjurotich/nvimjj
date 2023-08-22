@@ -1,3 +1,5 @@
+vim.cmd([[hi FloatBorder guifg=darkgrey guibg=NONE]])
+
 local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 	vim.keymap.set("n", "gd", function()
