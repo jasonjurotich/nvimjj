@@ -1,10 +1,10 @@
 local on_attach = function(client, bufnr)
 	local opts1 = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts1) -- jump to previous diagnostic in buffer
-	vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts1) -- jump to next diagnostic in buffer
-	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts1) -- show documentation for what is under cursor
-	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts1) -- got to declaration
-	vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts1) -- smart rename
+	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts1) -- jump to previous diagnostic in buffer
+	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts1) -- jump to next diagnostic in buffer
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts1) -- show documentation for what is under cursor
+	vim.keymap.set("n", "gd", vim.lsp.buf.declaration, opts1) -- got to declaration
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts1) -- smart rename
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
