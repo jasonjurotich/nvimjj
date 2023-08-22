@@ -64,10 +64,12 @@ require("lspconfig")["cssls"].setup({
 })
 
 -- configure ltex server
+-- you must install brew install ltex-ls first
+-- then you must add export PATH="/opt/homebrew/opt/ltex-ls:$PATH" to zshrc!!
 require("lspconfig")["ltex"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	cmd = { "/opt/homebrew/opt/ltex-ls" },
+	cmd = { "ltex-ls" },
 	filetypes = { "markdown", "text", "md", "bib", "plaintext", "tex", "gitcommit", "pandoc" },
 	flags = { debounce_text_changes = 300 },
 })
