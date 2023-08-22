@@ -74,6 +74,12 @@ require("lspconfig")["ltex"].setup({
 	cmd = { "ltex-ls" },
 	filetypes = { "markdown", "text", "md", "bib", "plaintext", "tex", "gitcommit", "pandoc" },
 	flags = { debounce_text_changes = 300 },
+	settings = {
+		ltex = {
+			language = "en",
+			language = "es",
+		},
+	},
 })
 
 -- markdown
