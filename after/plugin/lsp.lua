@@ -72,7 +72,7 @@ require("lspconfig")["ltex"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	cmd = { "ltex-ls" },
-	filetypes = { "markdown", "text", "md", "bib", "plaintext", "tex", "gitcommit", "pandoc" },
+	filetypes = { "markdown", "md", "gitcommit" },
 	flags = { debounce_text_changes = 300 },
 	settings = {
 		ltex = {
