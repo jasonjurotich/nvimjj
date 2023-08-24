@@ -1,4 +1,4 @@
-vim.cmd([[hi FloatBorder guifg=darkgrey guibg=NONE]])
+vim.cmd([[hi FloatBorder guifg=DarkGrey guibg=NONE]])
 
 local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
