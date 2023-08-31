@@ -3,11 +3,11 @@ require("gitsigns").setup()
 require("Comment").setup({
 	toggler = {
 		line = "gcc",
-		block = "x,c",
+		-- block = "x,c",
 	},
 	opleader = {
 		line = "gc",
-		block = "x,",
+		-- block = "x,",
 	},
 })
 
@@ -34,7 +34,6 @@ require("nvim-autopairs").setup({
 	end,
 })
 
-
 -- https://raw.githubusercontent.com/kyazdani42/nvim-tree.lua/master/doc/nvim-tree-lua.txt
 -- commands for nvim-tree
 require("nvim-tree").setup({
@@ -50,7 +49,6 @@ require("nvim-tree").setup({
 		},
 	},
 })
-
 
 -- require("auto-save").setup({
 -- 	enabled = true,
