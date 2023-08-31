@@ -12,13 +12,13 @@ local opts = { noremap = true, silent = true }
 
 -- window management
 keymap.set("n", "vs", ":vs<CR>") -- split window vertically, can also be <C-w>v
-keymap.set("n", "<leader>sh", "<C-w>s")        -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=")        -- make split windows equal width & height
+keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("t", "J", "<C-\\><C-N><C-W><C-W>")
 keymap.set("n", "L", "<C-W><C-W>")
 keymap.set("n", "H", "<C-W><C-H>")
 
-keymap.set('n', 'tw', ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
+keymap.set("n", "tw", ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
 keymap.set("n", "gb", "<C-o>")
@@ -42,11 +42,10 @@ keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
 keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
-
-keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open new tab
+keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tu", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>")     --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>")     --  go to previous tab
+keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>dt", ":tab DBUI<cr>", {})
 keymap.set("n", "<leader>du", ":tabclose<CR>:bnext<CR>:Bdelete!<CR><C-W><C-W>ZZ", {})
 
