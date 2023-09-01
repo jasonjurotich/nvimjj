@@ -10,6 +10,8 @@
 --   },
 -- }
 --
+--
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -26,16 +28,15 @@ require("lualine").setup({
 	sections = {
 		lualine_a = {
 			"mode",
-			-- format = function(mode)
-			-- 	return "%#" .. mode .. "#%1"
-			-- end,
 		},
+
 		lualine_b = { "diff", "diagnostics" },
 		lualine_c = { "searchcount" },
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},
+
 	inactive_sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "diff", "diagnostics" },
