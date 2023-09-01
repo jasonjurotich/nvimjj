@@ -38,7 +38,10 @@ vim.opt.splitbelow = true
 vim.opt.fillchars = "eob: "
 
 vim.opt.iskeyword:append("-")
+
 vim.opt.shortmess:append("c")
+vim.cmd("set shortmess-=S")
+
 vim.opt.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.spelllang = { "en_us", "es_mx" }
 
@@ -53,4 +56,3 @@ vim.diagnostic.config({ virtual_text = false })
 vim.opt.termguicolors = true
 vim.cmd([[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
 vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
-vim.cmd("set shortmess-=S")
