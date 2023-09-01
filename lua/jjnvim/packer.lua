@@ -13,17 +13,19 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
+	use("nvim-lua/plenary.nvim")
 
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
-		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	-- used to add elements to telescope, not configured yet
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("Slotos/telescope-lsp-handlers.nvim")
 	use("stevearc/dressing.nvim")
 
+	-- put lsp actions in telescope
 	use({
 		"aznhe21/actions-preview.nvim",
 		config = function()
@@ -31,6 +33,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- COLORSCHEME
 	use({
 		"Mofiqul/vscode.nvim",
 		as = "vscode",
@@ -74,17 +77,16 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use({
 		"folke/todo-comments.nvim",
-		requires = { { "nvim-lua/plenary.nvim" } },
 		opts = {},
 	})
 
 	-- STATUS, BUFFER, TERMINAL, EXPLORER
 	use("nvim-lualine/lualine.nvim")
-	-- use ('ojroques/nvim-hardline')
-	-- use("jasonjurotich/hardline-jjir")
 
-	use("vimpostor/vim-tpipeline") -- puts vim statusline into tmux statusline
+	-- puts vim statusline into tmux statusline
+	use("vimpostor/vim-tpipeline")
 
+	-- allows you to delete buffers with space df
 	use("moll/vim-bbye")
 
 	use("nvim-tree/nvim-tree.lua")
@@ -127,6 +129,13 @@ return require("packer").startup(function(use)
 	use("amarakon/nvim-cmp-lua-latex-symbols")
 	use("f3fora/cmp-spell")
 
+	-- tabnine for lsp
+	use({
+		"tzachar/cmp-tabnine",
+		run = "./install.sh",
+		requires = "hrsh7th/nvim-cmp",
+	})
+
 	-- show rust compiling in corner
 	use({
 		"j-hui/fidget.nvim",
@@ -142,17 +151,6 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("jayp0521/mason-nvim-dap.nvim")
-
-	-- use({
-	--   "VonHeikemen/lsp-zero.nvim",
-	--   branch = "v2.x",
-	-- })
-
-	use({
-		"tzachar/cmp-tabnine",
-		run = "./install.sh",
-		requires = "hrsh7th/nvim-cmp",
-	})
 
 	if packer_bootstrap then
 		require("packer").sync()

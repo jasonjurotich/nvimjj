@@ -11,6 +11,22 @@
 -- }
 --
 --
+function GetMode()
+	local mode = vim.fn.mode()
+	if mode == "n" then
+		return "N"
+	elseif mode == "i" then
+		return "I"
+	elseif mode == "v" or mode == "V" then
+		return "V"
+	elseif mode == "s" or mode == "S" then
+		return "S"
+	elseif mode == "R" or mode == "Rv" then
+		return "R"
+	elseif mode == "!" then
+		return "S"
+	end
+end
 
 require("lualine").setup({
 	options = {
@@ -27,7 +43,7 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = {
-			"mode",
+			GetMode,
 		},
 
 		lualine_b = { "diff", "diagnostics" },
