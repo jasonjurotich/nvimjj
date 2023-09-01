@@ -40,7 +40,6 @@ vim.opt.fillchars = "eob: "
 vim.opt.iskeyword:append("-")
 
 vim.opt.shortmess:append("c")
--- vim.cmd("set shortmess-=S")
 
 vim.opt.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.spelllang = { "en_us", "es_mx" }
@@ -50,10 +49,15 @@ vim.cmd([[inoremap wu println!("DEBUG this is {:#?}",);<left><left>]])
 
 vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
+
 -- vim.api.nvim_set_keymap('n', '<Leader>x', '<Cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 vim.diagnostic.config({ virtual_text = false })
+
 -- vim.g.nvim_tree_width = 25
 vim.opt.termguicolors = true
 vim.cmd([[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
 vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
--- vim.cmd("set noshowcmd")
+
+-- vim.cmd([[highlight NormalMode guibg=NONE guifg=blue]])
+-- this is to hide lualine because it is already in the tmux line
+vim.cmd("set noshowcmd")

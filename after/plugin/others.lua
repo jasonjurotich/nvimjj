@@ -3,11 +3,9 @@ require("gitsigns").setup()
 require("Comment").setup({
 	toggler = {
 		line = "gcc",
-		-- block = "x,c",
 	},
 	opleader = {
 		line = "gc",
-		-- block = "x,",
 	},
 })
 
