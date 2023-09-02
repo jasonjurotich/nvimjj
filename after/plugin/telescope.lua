@@ -1,3 +1,4 @@
+-- https://www.reddit.com/r/neovim/comments/116ydjp/lazynvim_cmd_option_for_telescope/
 local builtin = require("telescope.builtin")
 
 -- FILES
