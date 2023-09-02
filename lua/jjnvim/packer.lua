@@ -15,23 +15,29 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 
+	-- ICONS FOR MULTIPLE PLUGINS
+	use("nvim-tree/nvim-web-devicons")
+
+	-- TELESCOPE
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
 	})
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- used to add elements to telescope, not configured yet
-	use("nvim-telescope/telescope-ui-select.nvim")
-	use("Slotos/telescope-lsp-handlers.nvim")
 	use("stevearc/dressing.nvim")
+	-- use("nvim-telescope/telescope-ui-select.nvim")
+	-- use("Slotos/telescope-lsp-handlers.nvim")
 
 	-- put lsp actions in telescope
-	use({
-		"aznhe21/actions-preview.nvim",
-		config = function()
-			vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
-		end,
-	})
+	--
+	-- use({
+	-- 	"aznhe21/actions-preview.nvim",
+	-- 	config = function()
+	-- 		vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
+	-- 	end,
+	-- })
 
 	-- COLORSCHEME
 	use({
@@ -93,7 +99,6 @@ return require("packer").startup(function(use)
 	use({
 		"akinsho/bufferline.nvim",
 		tag = "*",
-		requires = "nvim-tree/nvim-web-devicons",
 	})
 	use("akinsho/toggleterm.nvim")
 

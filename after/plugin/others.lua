@@ -1,4 +1,5 @@
 require("gitsigns").setup()
+require("dressing").setup()
 
 require("Comment").setup({
 	toggler = {
@@ -8,7 +9,6 @@ require("Comment").setup({
 		line = "gc",
 	},
 })
-
 require("indent_blankline").setup({
 	buftype_exclude = { "terminal" },
 	filetype_exclude = { "dashboard", "packer" },
