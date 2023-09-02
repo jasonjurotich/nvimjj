@@ -32,10 +32,12 @@ keymap.set("n", "gv", ":lua vim.lsp.buf.format()<CR>")
 keymap.set("n", "z", "<C-d>zz")
 keymap.set("n", "x", "<C-u>zz")
 keymap.set("n", "<leader>w", ":w<CR>")
+keymap.set("n", "<leader>h", ":nohlsearch<CR>") -- this hides the search reults from being highlighted
 keymap.set("n", "<leader>5", "g_")
 keymap.set("n", "<leader>r", ":res +20<CR>")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "/", ":silent /") -- this removes the error that kept on coming out
 
 keymap.set("n", "<S-Up>", ":resize -2<CR>", opts)
 keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)

@@ -10,7 +10,8 @@
 --   },
 -- }
 --
---
+-- https://vi.stackexchange.com/questions/19736/custom-string-colors-in-statusline
+
 function GetMode()
 	local mode = vim.fn.mode()
 	if mode == "n" then
@@ -25,6 +26,8 @@ function GetMode()
 		return "R"
 	elseif mode == "!" then
 		return "S"
+	elseif mode == "c" then
+		return "C"
 	end
 end
 
@@ -34,7 +37,6 @@ require("lualine").setup({
 		theme = "auto",
 		component_separators = { left = " | ", right = " | " },
 		section_separators = { left = " | ", right = " | " },
-		ignore_focus = {},
 		always_divide_middle = true,
 		globalstatus = true,
 		refresh = {
