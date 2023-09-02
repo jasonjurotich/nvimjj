@@ -147,10 +147,15 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- Debugging
+	-- DEBUGGING
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("jayp0521/mason-nvim-dap.nvim")
+
+	-- DATABASES
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+	use("kristijanhusak/vim-dadbod-completion")
 
 	if packer_bootstrap then
 		require("packer").sync()

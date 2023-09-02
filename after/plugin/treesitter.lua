@@ -28,6 +28,7 @@ require("nvim-treesitter.configs").setup({
 		"gitignore",
 		"rust",
 		"latex",
+		"sql",
 	},
 	auto_install = true,
 })
