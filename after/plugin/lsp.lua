@@ -1,22 +1,35 @@
 vim.cmd([[hi FloatBorder guifg=DarkGrey guibg=NONE]])
 
+local opts = { noremap = true, silent = true }
 local on_attach = function(client, bufnr)
-	local opts = { buffer = bufnr, remap = false }
+	opts.buffer = bufnr
+
+	opts.desc = "Go to declaration"
 	vim.keymap.set("n", "gd", function()
 		vim.lsp.buf.declaration()
 	end, opts)
+
+	opts.desc = "Code actions"
 	vim.keymap.set("n", "ga", function()
 		vim.lsp.buf.code_action()
 	end, opts)
+
+	opts.desc = "Hover info"
 	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end, opts)
+
+	opts.desc = "Go to next diagnostic"
 	vim.keymap.set("n", "[d", function()
 		vim.diagnostic.goto_next()
 	end, opts)
+
+	opts.desc = "Go to previous diagnostic"
 	vim.keymap.set("n", "]d", function()
 		vim.diagnostic.goto_prev()
 	end, opts)
+
+	opts.desc = "Rename function everywhere"
 	vim.keymap.set("n", "<leader>rn", function()
 		vim.lsp.buf.rename()
 	end, opts)
