@@ -31,7 +31,6 @@ return require("packer").startup(function(use)
 	-- use("Slotos/telescope-lsp-handlers.nvim")
 
 	-- put lsp actions in telescope
-	--
 	-- use({
 	-- 	"aznhe21/actions-preview.nvim",
 	-- 	config = function()

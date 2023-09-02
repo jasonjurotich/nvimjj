@@ -1,12 +1,17 @@
 -- https://www.reddit.com/r/neovim/comments/116ydjp/lazynvim_cmd_option_for_telescope/
 -- Telescope uses ripgrep, need to have it installed from before installing Telescope
---
+
 local builtin = require("telescope.builtin")
 
 local tel = require("telescope")
 local actions = require("telescope.actions")
 
 tel.setup({
+	-- extensions = {
+	-- 	["ui-select"] = {
+	-- 		require("telescope.themes").get_dropdown({}),
+	-- 	},
+	-- },
 	defaults = {
 		mappings = {
 			i = {
@@ -23,6 +28,7 @@ tel.setup({
 })
 
 tel.load_extension("fzf")
+-- tel.load_extension("ui-select")
 
 -- FILES
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" }) -- find files within working directory, respects .gitignore
