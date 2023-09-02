@@ -47,7 +47,6 @@ require("lualine").setup({
 		lualine_a = {
 			GetMode,
 		},
-
 		lualine_b = { "diff", "diagnostics" },
 		lualine_c = { "searchcount" },
 		lualine_x = {},
