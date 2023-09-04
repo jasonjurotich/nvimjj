@@ -29,7 +29,6 @@ vim.opt.scrolloff = 8
 vim.opt.cursorline = false
 vim.opt.signcolumn = "yes"
 
-vim.opt.termguicolors = true
 vim.opt.backspace = "indent,eol,start"
 
 vim.opt.clipboard:append("unnamedplus")
@@ -54,7 +53,7 @@ vim.opt.termguicolors = true
 
 vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
-vim.cmd([[highlight NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
+vim.cmd([[hi NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
 vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
 
 -- vim.cmd([[highlight NormalMode guibg=NONE guifg=blue]])
