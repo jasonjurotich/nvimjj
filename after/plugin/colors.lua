@@ -1,9 +1,10 @@
 require("vscode").setup({
 	transparent = true,
-	italic_comments = true,
+	italic_comments = false,
 	disable_nvimtree_bg = true,
 	group_overrides = {
-		BufferLineFill = { fg = "NONE" },
+		BufferLineFill = { fg = "Black" },
+		BufferLineBufferSelected = { fg = "Yellow" },
 	},
 })
 
