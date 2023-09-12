@@ -21,7 +21,6 @@ keymap.set("n", "H", "<C-W><C-H>")
 keymap.set("n", "tw", ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
-keymap.set("n", "gb", "<C-o>")
 keymap.set("n", "gn", "<C-t>")
 keymap.set("n", "ss", "ZZ")
 keymap.set("n", "te", ":ToggleTerm size=80 dir direction=vertical hidden=true <CR>")
@@ -63,3 +62,5 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- goyo
 keymap.set("n", "<leader>gy", ":Goyo 80<CR>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+
+keymap.set("n", "gb", "<C-o>")

@@ -11,6 +11,7 @@ require("dressing").setup({
 	input = {
 		win_options = {
 			winhighlight = "Normal:MyNormal,FloatBorder:MyFloatBorder,CursorLine:MyCursorLine,NormalFloat:MyNormalFloat,NormalNC:MyNormalNC,NonText:MyNonText,Search:None",
+			winblend = 0,
 		},
 	},
 })
@@ -18,11 +19,14 @@ require("dressing").setup({
 require("Comment").setup({
 	toggler = {
 		line = "gcc",
+		block = "goc",
 	},
 	opleader = {
 		line = "gc",
+		block = "go",
 	},
 })
+
 require("indent_blankline").setup({
 	buftype_exclude = { "terminal" },
 	filetype_exclude = { "dashboard", "packer" },

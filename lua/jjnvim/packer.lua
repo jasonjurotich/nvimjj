@@ -144,12 +144,15 @@ return require("packer").startup(function(use)
 	-- show rust compiling in corner
 	use({
 		"j-hui/fidget.nvim",
-		tag = "legacy",
 		config = function()
 			require("fidget").setup({
-				-- options
+				window = {
+					blend = 0,
+					relative = "editor",
+				},
 			})
 		end,
+		tag = "legacy",
 	})
 
 	-- DEBUGGING

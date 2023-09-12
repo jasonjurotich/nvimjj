@@ -24,3 +24,8 @@ vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
 vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
 vim.cmd([[hi FloatBorder guifg=DarkGrey guibg=NONE]])
+
+vim.cmd("highlight FidgetTitle ctermbg=NONE guibg=NONE")
+vim.cmd("highlight FidgetTask ctermbg=NONE guibg=NONE")
+vim.api.nvim_win_set_option(0, "winblend", 0)
+-- vim.cmd("autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE")
