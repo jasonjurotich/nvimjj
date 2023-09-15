@@ -86,7 +86,15 @@ return require("packer").startup(function(use)
 	})
 
 	-- STATUS, BUFFER, TERMINAL, EXPLORER
-	use("nvim-lualine/lualine.nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"linrongbin16/lsp-progress.nvim",
+		},
+		config = function()
+			require("lsp-progress").setup()
+		end,
+	})
 
 	-- puts vim statusline into tmux statusline
 	use("vimpostor/vim-tpipeline")
@@ -142,18 +150,18 @@ return require("packer").startup(function(use)
 	})
 
 	-- show rust compiling in corner
-	use({
-		"j-hui/fidget.nvim",
-		config = function()
-			require("fidget").setup({
-				window = {
-					blend = 0,
-					relative = "editor",
-				},
-			})
-		end,
-		tag = "legacy",
-	})
+	-- use({
+	-- 	"j-hui/fidget.nvim",
+	-- 	config = function()
+	-- 		require("fidget").setup({
+	-- 			window = {
+	-- 				blend = 0,
+	-- 				relative = "editor",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	tag = "legacy",
+	-- })
 
 	-- DEBUGGING
 	use("mfussenegger/nvim-dap")
