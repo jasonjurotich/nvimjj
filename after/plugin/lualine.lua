@@ -49,7 +49,7 @@ require("lualine").setup({
 		},
 		lualine_b = { "diff", "diagnostics" },
 		lualine_c = { "searchcount" },
-		lualine_x = { "require('lsp-progress').progress({max_size = 100})" },
+		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},
@@ -58,16 +58,8 @@ require("lualine").setup({
 		lualine_a = { GetMode },
 		lualine_b = { "diff", "diagnostics" },
 		lualine_c = { "searchcount" },
-		lualine_x = { "require('lsp-progress').progress({max_size = 100})" },
+		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},
 })
-
-vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
-vim.api.nvim_create_autocmd("User LspProgressStatusUpdated", {
-	group = "lualine_augroup",
-	callback = require("lualine").refresh,
-})
-
--- "searchcount",
