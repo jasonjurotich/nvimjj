@@ -1,4 +1,4 @@
--- TODO what is
+-- TODO  what is
 
 require("todo-comments").setup({
 	signs = true, -- show icons in the signs column
@@ -11,7 +11,7 @@ require("todo-comments").setup({
 			alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
 			-- signs = false, -- configure signs for some keywords individually
 		},
-		TODO = { icon = " ", color = "info" },
+		TODO = { icon = " ", color = "#F38701" },
 		-- DEBUG = { icon = " ", color = "warning" },
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
@@ -40,7 +40,7 @@ require("todo-comments").setup({
 	colors = {
 		error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
 		warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-		info = { "DiagnosticInfo", "#2563EB" },
+		info = { "DiagnosticInfo", "#F38701" },
 		hint = { "DiagnosticHint", "#10B981" },
 		default = { "Identifier", "#7C3AED" },
 		test = { "Identifier", "#FF00FF" },
