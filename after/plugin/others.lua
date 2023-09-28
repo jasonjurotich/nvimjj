@@ -27,7 +27,7 @@ require("Comment").setup({
 	},
 })
 
-require("indent_blankline").setup({
+require("ibl").setup({
 	buftype_exclude = { "terminal" },
 	filetype_exclude = { "dashboard", "packer" },
 	space_char_blankline = " ",

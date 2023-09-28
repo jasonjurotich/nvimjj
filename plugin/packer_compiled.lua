@@ -140,7 +140,7 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/dressing.nvim"
   },
   ["fidget.nvim"] = {
-    config = { "\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\2\nblend\3\0\rrelative\veditor\nsetup\vfidget\frequire\0" },
+    config = { "\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\2\rrelative\veditor\nblend\3\0\nsetup\vfidget\frequire\0" },
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
@@ -364,7 +364,7 @@ try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\
 time([[Setup for markdown-preview.nvim]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\2\nblend\3\0\rrelative\veditor\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\2\rrelative\veditor\nblend\3\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
 time([[Config for fidget.nvim]], false)
 -- Config for: vscode
 time([[Config for vscode]], true)
