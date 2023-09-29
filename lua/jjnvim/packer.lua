@@ -61,9 +61,13 @@ return require("packer").startup(function(use)
 		after = "nvim-treesitter",
 	})
 
+	-- GIT
+	-- https://alpha2phi.medium.com/neovim-for-beginners-source-code-control-71139e4513a1
+	use("tpope/vim-fugitive")
+	use("lewis6991/gitsigns.nvim")
+
 	-- TOOLS
 	use("mbbill/undotree")
-	use("tpope/vim-fugitive")
 	use("wakatime/vim-wakatime")
 	use("simrat39/rust-tools.nvim")
 	use("szw/vim-maximizer")
@@ -79,7 +83,6 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/vim-pencil")
 	use("p00f/nvim-ts-rainbow")
-	use("lewis6991/gitsigns.nvim")
 	use({
 		"folke/todo-comments.nvim",
 		opts = {},
