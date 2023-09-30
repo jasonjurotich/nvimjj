@@ -80,7 +80,7 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("numToStr/Comment.nvim")
 
-	use("lukas-reineke/indent-blankline.nvim")
+	-- use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/vim-pencil")
 	use("p00f/nvim-ts-rainbow")
 	use({
