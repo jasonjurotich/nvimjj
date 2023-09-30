@@ -1,4 +1,4 @@
-local ensure_packer = function()
+  local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if fn.empty(fn.glob(install_path)) > 0 then
@@ -80,6 +80,8 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("numToStr/Comment.nvim")
 
+	use("stevearc/conform.nvim")
+
 	-- use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/vim-pencil")
 	use("p00f/nvim-ts-rainbow")
@@ -120,10 +122,11 @@ return require("packer").startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
-	use("jose-elias-alvarez/null-ls.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("jayp0521/mason-null-ls.nvim")
+
+	-- use("jose-elias-alvarez/null-ls.nvim")
+	-- use("jayp0521/mason-null-ls.nvim")
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")

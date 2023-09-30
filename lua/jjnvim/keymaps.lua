@@ -27,7 +27,7 @@ keymap.set("n", "te", ":ToggleTerm size=80 dir direction=vertical hidden=true <C
 keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap.set("n", "<leader>df", ":w<CR>:bdelete!<CR>") -- this writes and then empties the buffer
-keymap.set("n", "gv", ":lua vim.lsp.buf.format()<CR>")
+-- keymap.set("n", "gv", ":lua vim.lsp.buf.format()<CR>")
 keymap.set("n", "z", "<C-d>zz")
 keymap.set("n", "x", "<C-u>zz")
 keymap.set("n", "<leader>w", ":w<CR>")
