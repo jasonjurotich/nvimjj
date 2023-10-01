@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
   },
+  ["crates.nvim"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/crates.nvim",
+    url = "https://github.com/saecki/crates.nvim"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/dressing.nvim",
@@ -258,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["rust.vim"] = {
+    loaded = true,
+    path = "/Users/jj/.local/share/nvimjj/site/pack/packer/start/rust.vim",
+    url = "https://github.com/rust-lang/rust.vim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

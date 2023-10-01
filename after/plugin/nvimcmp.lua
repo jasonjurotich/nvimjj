@@ -64,6 +64,7 @@ cmp.setup({
 		{ name = "path" }, -- file system paths
 		{ name = "cmp_tabnine" },
 		{ name = "ltex" },
+    { name = "crates" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
 		-- {name = 'copilot'},
 		{

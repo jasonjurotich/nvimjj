@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
 		"marksman",
 		"taplo",
 		"ltex",
+    "codelldb"
 	},
 	automatic_installation = true,
 })

@@ -66,10 +66,14 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
 
+  -- TOOLS RUST
+  use("simrat39/rust-tools.nvim")
+  use("saecki/crates.nvim")
+  use("rust-lang/rust.vim")
+
 	-- TOOLS
 	use("mbbill/undotree")
 	use("wakatime/vim-wakatime")
-	use("simrat39/rust-tools.nvim")
 	use("szw/vim-maximizer")
 	use("christoomey/vim-tmux-navigator")
 	use("vim-scripts/ReplaceWithRegister")
@@ -164,6 +168,8 @@ return require("packer").startup(function(use)
 	})
 
 	-- DEBUGGING
+  -- https://www.youtube.com/watch?v=mh_EJhH49Ms
+  -- https://youtu.be/mh_EJhH49Ms?si=7ilNFB691q_0I-BE
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("jayp0521/mason-nvim-dap.nvim")

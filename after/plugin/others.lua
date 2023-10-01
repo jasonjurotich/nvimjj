@@ -1,4 +1,6 @@
 require("gitsigns").setup()
+require("crates").setup()
+
 
 vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "None" })
 vim.api.nvim_set_hl(0, "MyNormalNC", { bg = "None", fg = "None" })
