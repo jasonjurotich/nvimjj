@@ -171,6 +171,7 @@ return require("packer").startup(function(use)
 	-- DEBUGGING
   -- https://www.youtube.com/watch?v=mh_EJhH49Ms
   -- https://youtu.be/mh_EJhH49Ms?si=7ilNFB691q_0I-BE
+  -- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("jayp0521/mason-nvim-dap.nvim")
