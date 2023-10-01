@@ -17,9 +17,3 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
--- require("mason-null-ls").setup({
--- 	ensure_installed = {
--- 		"cspell",
--- 	},
--- 	automatic_installation = true,
--- })
