@@ -129,8 +129,9 @@ return require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
-	-- use("jose-elias-alvarez/null-ls.nvim")
-	-- use("jayp0521/mason-null-ls.nvim")
+  -- LINTING 
+  use ("mfussenegger/nvim-lint")
+
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")
