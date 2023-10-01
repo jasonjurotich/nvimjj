@@ -1,5 +1,7 @@
 require("gitsigns").setup()
-require("crates").setup()
+local crates = require("crates")
+crates.setup()
+crates.show()
 
 
 vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "None" })
