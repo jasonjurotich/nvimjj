@@ -47,6 +47,7 @@ vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Grep word under
 vim.keymap.set("n", "<leader>di", builtin.diagnostics, { desc = "List diagnostic errors and warnings" })
 vim.keymap.set("n", "<leader>re", builtin.lsp_references, { desc = "List where function is used" })
 vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "List functions in current document" })
+vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, { desc = "List functions in worksspace" })
 
 vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
 vim.keymap.set("n", "ge", builtin.lsp_definitions, {})
