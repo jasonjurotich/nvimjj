@@ -30,6 +30,8 @@ keymap.set("n", "<leader>df", ":w<CR>:bdelete!<CR>") -- this writes and then emp
 -- keymap.set("n", "gv", ":RustFmt<CR>")
 keymap.set("n", "z", "<C-d>zz")
 keymap.set("n", "x", "<C-u>zz")
+keymap.set("n", "q", "5j")
+keymap.set("n", "t", "5k")
 keymap.set("n", "<leader>w", ":w<CR>")
 keymap.set("n", "<leader>h", ":nohlsearch<CR>") -- this hides the search reults from being highlighted
 keymap.set("n", "-", "g_")
