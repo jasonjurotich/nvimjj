@@ -1,4 +1,6 @@
-  local ensure_packer = function()
+-- https://github.com/folke/noice.nvim#-noice-nice-noise-notice
+
+local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if fn.empty(fn.glob(install_path)) > 0 then
@@ -66,10 +68,10 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
 
-  -- TOOLS RUST
-  use("simrat39/rust-tools.nvim")
-  use("saecki/crates.nvim")
-  use("rust-lang/rust.vim")
+	-- TOOLS RUST
+	use("simrat39/rust-tools.nvim")
+	use("saecki/crates.nvim")
+	use("rust-lang/rust.vim")
 
 	-- TOOLS
 	use("mbbill/undotree")
@@ -129,9 +131,8 @@ return require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
-  -- LINTING 
-  use ("mfussenegger/nvim-lint")
-
+	-- LINTING
+	use("mfussenegger/nvim-lint")
 
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")
@@ -169,9 +170,9 @@ return require("packer").startup(function(use)
 	})
 
 	-- DEBUGGING
-  -- https://www.youtube.com/watch?v=mh_EJhH49Ms
-  -- https://youtu.be/mh_EJhH49Ms?si=7ilNFB691q_0I-BE
-  -- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+	-- https://www.youtube.com/watch?v=mh_EJhH49Ms
+	-- https://youtu.be/mh_EJhH49Ms?si=7ilNFB691q_0I-BE
+	-- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("jayp0521/mason-nvim-dap.nvim")
