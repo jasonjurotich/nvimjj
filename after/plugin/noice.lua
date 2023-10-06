@@ -1,3 +1,12 @@
+-- https://github.com/TechnicalDC/NvConf/blob/main/lua/plugins/ui.lua
+-- https://github.com/folke/noice.nvim#-noice-nice-noise-notice
+-- https://youtu.be/nxzds7GN6oY?si=FYclJcrZpYo_JMOV
+-- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes
+
+-- vim.api.nvim_set_hl(0, "MyFloatBorder", { bg = "None", fg = "#464140" })
+-- vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "None" })
+-- vim.api.nvim_set_hl(0, "MyNormalFloat", { bg = "None", fg = "None" })
+
 -- vim.cmd([[hi FloatBorder guifg=#515151  guibg=NONE]])
 --
 -- require("noice").setup({
