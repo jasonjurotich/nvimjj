@@ -23,7 +23,7 @@ vim.cmd([[hi NonText guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi CursorLine guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NvimTreeCursorLine cterm=NONE ctermbg=NONE guibg=NONE gui=NONE]])
 vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
-vim.cmd([[hi FloatBorder guifg=DarkGrey guibg=NONE]])
+vim.cmd([[hi FloatBorder guifg=#515151  guibg=NONE]])
 
 vim.cmd("highlight FidgetTitle ctermbg=NONE guibg=NONE")
 vim.cmd("highlight FidgetTask ctermbg=NONE guibg=NONE")

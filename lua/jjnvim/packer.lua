@@ -80,6 +80,9 @@ return require("packer").startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 	use("vim-scripts/ReplaceWithRegister")
 	use("Pocco81/auto-save.nvim")
+  use("MunifTanjim/nui.nvim")
+  use("rcarriga/nvim-notify")
+  use("folke/noice.nvim")
 
 	-- FORMATTING
 	use("windwp/nvim-autopairs")
