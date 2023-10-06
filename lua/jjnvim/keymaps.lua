@@ -48,8 +48,10 @@ keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tu", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<leader><Tab>", ":tabn<CR>") --  go to next tab
+keymap.set("n", "<leader><S-Tab>", ":tabp<CR>") --  go to previous tab
+-- keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+-- keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>dt", ":tab DBUI<cr>", {})
 keymap.set("n", "<leader>du", ":tabclose<CR>:bnext<CR>:Bdelete!<CR><C-W><C-W>ZZ", {})
 
