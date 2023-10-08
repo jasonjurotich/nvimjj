@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "List f
 vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, { desc = "List functions in worksspace" })
 
 vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
-vim.keymap.set("n", "ge", builtin.lsp_definitions, {}) {desc = "go to original variable"}
+vim.keymap.set("n", "ge", builtin.lsp_definitions, {desc = "go to original variable"})
 vim.keymap.set("n", "td", builtin.lsp_type_definitions, {})
 
 -- GIT
