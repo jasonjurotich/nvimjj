@@ -1,7 +1,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.tpipeline_autoembed = 0
-vim.g.dadbod_ui_run_query_on_escape = 0
 
 vim.g.rust_recommended_style = 0
 vim.opt.ls = 0
@@ -61,4 +60,3 @@ vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
 -- this is to hide lualine because it is already in the tmux line
 vim.cmd("set noshowcmd")
 vim.o.laststatus = 0
-vim.cmd([[au FileType dbui nmap <buffer> <Esc> <Esc>]])
