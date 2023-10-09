@@ -1,4 +1,5 @@
 require("gitsigns").setup()
+vim.keymap.set("n", "<leader>vf", vim.cmd.Git)
 
 local crates = require("crates")
 crates.setup()
