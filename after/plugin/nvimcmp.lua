@@ -64,7 +64,7 @@ cmp.setup({
 		{ name = "path" }, -- file system paths
 		{ name = "cmp_tabnine" },
 		{ name = "ltex" },
-    { name = "crates" },
+		{ name = "crates" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
 		-- {name = 'copilot'},
 		{
@@ -77,4 +77,12 @@ cmp.setup({
 			},
 		},
 	}),
+
+	vim.api.nvim_exec(
+		[[
+      autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+      autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+    ]],
+	false
+	),
 })
