@@ -1,11 +1,20 @@
+--crates
+require("crates").setup({
+	src = {
+		cmp = {
+			enabled = true,
+		},
+	},
+})
+
+-- Gitsigns
 require("gitsigns").setup()
+
+-- fugitive
 vim.keymap.set("n", "<leader>vf", vim.cmd.Git)
+
+-- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-
-local crates = require("crates")
-crates.setup()
-crates.show()
-
 
 vim.api.nvim_set_hl(0, "MyNormal", { bg = "None", fg = "None" })
 vim.api.nvim_set_hl(0, "MyNormalNC", { bg = "None", fg = "None" })

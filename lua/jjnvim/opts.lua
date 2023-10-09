@@ -61,3 +61,4 @@ vim.cmd([[hi StatusLine ctermbg=NONE cterm=NONE]])
 -- this is to hide lualine because it is already in the tmux line
 vim.cmd("set noshowcmd")
 vim.o.laststatus = 0
+vim.cmd([[au FileType dbui nmap <buffer> <Esc> <Esc>]])

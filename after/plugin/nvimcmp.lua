@@ -80,7 +80,6 @@ cmp.setup({
 
 	vim.api.nvim_exec(
 		[[
-      au FileType dbui nmap <buffer> <Esc> <Esc>
       autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
       autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
     ]],

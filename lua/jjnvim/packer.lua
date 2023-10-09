@@ -79,7 +79,7 @@ return require("packer").startup(function(use)
 	use("szw/vim-maximizer")
 	use("christoomey/vim-tmux-navigator")
 	use("vim-scripts/ReplaceWithRegister")
-	use("Pocco81/auto-save.nvim")
+	-- use("Pocco81/auto-save.nvim")
 
   -- use("MunifTanjim/nui.nvim")
   -- use("rcarriga/nvim-notify")
