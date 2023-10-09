@@ -1,5 +1,6 @@
 require("gitsigns").setup()
 vim.keymap.set("n", "<leader>vf", vim.cmd.Git)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 local crates = require("crates")
 crates.setup()

@@ -1,5 +1,5 @@
 vim.cmd([[hi FloatBorder guifg=DarkGrey guibg=NONE]])
-vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=DarkGrey guibg=NONE]])
+vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#515151 guibg=NONE]])
 
 local opts = { noremap = true, silent = true }
 local on_attach = function(client, bufnr)
@@ -172,4 +172,4 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 vim.diagnostic.config({
 	float = { border = "rounded" },
 })
-vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=DarkGrey guibg=NONE]])
+vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=#515151 guibg=NONE]])
