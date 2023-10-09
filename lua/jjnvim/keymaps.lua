@@ -52,7 +52,8 @@ keymap.set("n", "<leader><Tab>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader><S-Tab>", ":tabp<CR>") --  go to previous tab
 -- keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 -- keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
-keymap.set("n", "<leader>dt", ":tab DBUI<cr>", {})
+keymap.set("n", "<leader>dt", ":DBUIToggle<cr>", {})
+keymap.set("n", "<leader>db", ":tab DBUI<cr>", {})
 keymap.set("n", "<leader>du", ":tabclose<CR>:bnext<CR>:Bdelete!<CR><C-W><C-W>ZZ", {})
 
 -- vim-maximizer
