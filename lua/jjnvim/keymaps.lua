@@ -18,16 +18,23 @@ keymap.set("t", "J", "<C-\\><C-N><C-W><C-W>")
 keymap.set("n", "L", "<C-W><C-W>")
 keymap.set("n", "H", "<C-W><C-H>")
 
+keymap.set("n", "<S-Up>", ":resize -2<CR>", opts)
+keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
+keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
+keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
+
+
+
+
+
 keymap.set("n", "tw", ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
-keymap.set("n", "gn", "<C-t>")
 keymap.set("n", "ss", "ZZ")
 keymap.set("n", "te", ":ToggleTerm size=80 dir direction=vertical hidden=true <CR>")
 keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap.set("n", "<leader>df", ":w<CR>:bdelete!<CR>") -- this writes and then empties the buffer
--- keymap.set("n", "gv", ":RustFmt<CR>")
 keymap.set("n", "z", "<C-d>zz")
 keymap.set("n", "x", "<C-u>zz")
 keymap.set("n", "q", "5j")
@@ -41,11 +48,7 @@ keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "/", ":silent /") -- this removes the error that kept on coming out
 
-keymap.set("n", "<S-Up>", ":resize -2<CR>", opts)
-keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
-keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
-keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
-
+-- TABS
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tu", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader><Tab>", ":tabn<CR>") --  go to next tab
@@ -54,7 +57,6 @@ keymap.set("n", "<leader><S-Tab>", ":tabp<CR>") --  go to previous tab
 -- keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 --
 keymap.set("n", "<leader>db", ":DBUI<CR>", {})
-
 keymap.set("n", "<leader>du", ":tabclose<CR>:bnext<CR>:Bdelete!<CR><C-W><C-W>ZZ", {})
 
 -- vim-maximizer
