@@ -24,10 +24,11 @@ keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 
+-- format rust
+-- keymap.set("n", "gv", ":silent !cargo fmt<CR>", opts )
 
 
-
-keymap.set("n", "tw", ":%s/\\s\\+$//e<CR>", { noremap = true, silent = true })
+keymap.set("n", "tw", ":%s/\\s\\+$//e<CR>", opts)
 keymap.set("n", "Q", ":x<CR>")
 keymap.set("n", "W", ":x<CR>:x<CR>")
 keymap.set("n", "ss", "ZZ")

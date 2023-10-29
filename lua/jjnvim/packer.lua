@@ -81,9 +81,9 @@ return require("packer").startup(function(use)
 	use("vim-scripts/ReplaceWithRegister")
 	-- use("Pocco81/auto-save.nvim")
 
-  -- use("MunifTanjim/nui.nvim")
-  -- use("rcarriga/nvim-notify")
-  -- use("folke/noice.nvim")
+	-- use("MunifTanjim/nui.nvim")
+	-- use("rcarriga/nvim-notify")
+	-- use("folke/noice.nvim")
 
 	-- FORMATTING
 	use("windwp/nvim-autopairs")
@@ -91,6 +91,7 @@ return require("packer").startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	use("stevearc/conform.nvim")
+	-- use("sbdchd/neoformat")
 
 	-- use("lukas-reineke/indent-blankline.nvim")
 	use("preservim/vim-pencil")
